@@ -1,0 +1,43 @@
+@use "../../../presets" as *;
+@use "../../../mixins" as *;
+
+.skills {
+@include sm-min {
+padding: $gap-sm;
+  }
+  @include sm {
+padding: $gap;
+  }
+
+  &__container {
+display: grid;
+
+    @include lg-min {
+gap: $gap-sm;
+      grid-template-areas: "ga1 ga1 ga2 ga3" "ga4 ga5 ga5 ga6" "ga7 ga8 ga9 ga6";
+    }
+    @include lg-md {
+gap: $gap-sm;
+      grid-template-areas: "ga1 ga1 ga2" "ga3 ga4 ga4" "ga5 ga5 ga6" "ga7 ga8 ga6" "ga7 ga9 ga9";
+    }
+    @include md-sm {
+gap: $gap-sm;
+      grid-template-areas: "ga1 ga2" "ga3 ga2" "ga4 ga4" "ga5 ga6" "ga5 ga7" "ga8 ga9";
+    }
+    @include sm {
+gap: $gap;
+      grid-template-areas: "ga1" "ga2" "ga3" "ga4" "ga5" "ga6" "ga7" "ga8" "ga9";
+    }
+  }
+
+  &__action {
+display: flex;
+    justify-content: center;
+
+    margin-top: $gap;
+
+    @include sm-min {
+margin-bottom: $gap-lg;
+    }
+  }
+}
