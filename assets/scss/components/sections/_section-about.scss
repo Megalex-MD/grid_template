@@ -1,3 +1,116 @@
 @use "../../presets" as *;
 @use "../../mixins" as *;
 
+:root {
+  --padding: 60px;
+}
+.about {
+  background-color: $color-gray-light;
+  letter-spacing: 0.055em;
+  @include lg-min {
+    padding-top: calc(var(--padding) + $gap * 2);
+    padding-bottom: calc(var(--padding) + $gap * 2);
+  }
+  @include lg-md {
+    padding-top: calc(var(--padding) + $gap);
+    padding-bottom: calc(var(--padding) + $gap);
+  }
+  @include md {
+    padding-top: var(--padding);
+    padding-bottom: var(--padding);
+  }
+
+  &__containter {
+    @extend %container;
+    display: grid;
+
+    @include lg-min {
+      grid-template-columns: 1fr 271px;
+      gap: calc(var(--padding) + $gap * 2);
+    }
+
+    @include lg-md {
+      grid-template-columns: 1fr 271px;
+      gap: $gap * 2;
+    }
+    @include md-sm {
+      gap: $gap;
+      grid-template-columns: 1fr 236px;
+    }
+    @include sm {
+      grid-template-columns: 1fr;
+      gap: $gap;
+    }
+  }
+  &__title {
+    line-height: 1.2em;
+    letter-spacing: 0.1em;
+    color: $color-primary;
+    margin-top: 0;
+
+    @include lg-min {
+      font-size: 2.5rem;
+      margin-bottom: 3rem;
+    }
+    @include lg-md {
+      font-size: 2rem;
+      margin-bottom: 2.625rem;
+    }
+    @include md-sm {
+      margin-bottom: 2.25rem;
+      font-size: 1.5rem;
+    }
+    @include sm {
+      margin-bottom: 2.25rem;
+      text-align: center;
+      font-size: 1.5rem;
+    }
+  }
+
+  &__paragraph {
+    line-height: 1.15;
+    color: $color-gray;
+    @include lg-min {
+      font-size: 1.125rem;
+    }
+
+    &:first-of-type {
+      position: relative;
+      margin-top: -5px;
+
+      &::after {
+        position: absolute;
+        top: 0;
+        width: 2px;
+        height: 200px;
+        content: "";
+        background-color: rgb($color-gray, 0.1);
+        @include lg-min {
+          right: -50px;
+        }
+
+        @include lg-md {
+          right: -$gap;
+        }
+        @include md-sm {
+          right: -$gap-sm;
+        }
+        @include sm {
+          display: none;
+        }
+      }
+    }
+    &:last-of-type {
+      margin: 0;
+    }
+  }
+  &__image {
+    display: grid;
+    align-items: center;
+    justify-items: center;
+  }
+  &__image img {
+    max-width: 100%;
+    max-height: 480px;
+  }
+}
