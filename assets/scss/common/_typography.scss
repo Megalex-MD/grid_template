@@ -11,10 +11,9 @@ body {
 
   margin: 0;
 
-  letter-spacing: 0.1em;
-
   font-family: $font-main;
   font-size: $font-size;
+  line-height: 1.15;
 }
 h1 {
   text-align: center;
@@ -38,10 +37,13 @@ h1 {
 }
 h2 {
   font-family: $font-header;
+  color: $color-primary;
+  letter-spacing: 0.1em;
+  line-height: 1.2em;
 }
 
 a {
   text-decoration: none;
 
-  color: #ffffff;
+  color: $color-light;
 }
