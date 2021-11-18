@@ -1,2 +1,71 @@
 @use "../../presets" as *;
 @use "../../mixins" as *;
+
+.footer {
+padding: calc($gap-x2 + $gap-sm) $gap calc($gap-x3 + $gap-sm);
+
+  background-color: $color-primary;
+
+  &__container {
+@extend %container;
+  }
+  &__social {
+position: relative;
+
+    display: grid;
+    justify-content: center;
+
+    margin-bottom: $gap-x2;
+
+    grid-template-columns: repeat(auto-fit, minmax(3.125rem, max-content));
+    justify-items: center;
+    &-link {
+padding: $gap-sm;
+
+      transition: color 0.5s;
+      &:hover {
+color: $color-accent;
+      }
+    }
+    &::after {
+position: absolute;
+      bottom: -$gap;
+
+      width: 4.687rem;
+      height: 0.125rem;
+
+      content: "";
+
+      background-color: rgba($color-light, 0.1);
+    }
+  }
+
+  &__social .fab {
+font-size: 2.25rem;
+  }
+  &__message {
+display: grid;
+    justify-content: center;
+
+    justify-items: center;
+  }
+  &__message p {
+margin: 0;
+
+    letter-spacing: 0.05em;
+
+    color: $color-light;
+    color: $color-gray-light;
+
+    font-weight: 700;
+    &:nth-of-type(1) {
+margin-right: -0.5em;
+
+      letter-spacing: 0.33em;
+
+      color: $color-gray;
+
+      font-weight: 100;
+    }
+  }
+}

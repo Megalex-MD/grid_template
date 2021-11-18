@@ -2,126 +2,144 @@
 @use "../../mixins" as *;
 
 .posts {
-  @include lg-min {
-    padding-top: $gap-x5;
+@include lg-min {
+padding-top: $gap-x5;
     padding-bottom: $gap-x5;
   }
   @include lg-md {
-    padding-top: $gap-x4;
+padding-top: $gap-x4;
     padding-bottom: $gap-x4;
   }
   @include md {
-    padding-top: $gap-x3;
+padding-top: $gap-x3;
     padding-bottom: $gap-x3;
   }
 
   &__title {
-    margin-top: 0;
+margin-top: 0;
+
     @include lg-min {
+margin-bottom: 3rem;
+
       font-size: 2.5rem;
-      margin-bottom: 3rem;
     }
     @include lg-md {
+margin-bottom: 2.625rem;
+
       font-size: 2rem;
-      margin-bottom: 2.625rem;
     }
     @include md-sm {
-      margin-bottom: 2.25rem;
+margin-bottom: 2.25rem;
+
       font-size: 1.5rem;
     }
     @include md {
-      margin-bottom: 2.25rem;
+margin-bottom: 2.25rem;
+
       font-size: 1.5rem;
     }
     @include sm {
-      text-align: center;
+text-align: center;
     }
   }
   &__container {
-    @extend %container;
+@extend %container;
   }
   &__grid {
-    display: grid;
-    gap: $gap;
+display: grid;
+
     padding-bottom: $gap;
+
+    gap: $gap;
     @include lg-min {
-      grid-template-areas: "a1 a1 a2 a3" "a4 a5 a6 a6";
+grid-template-areas: "a1 a1 a2 a3" "a4 a5 a6 a6";
       grid-template-columns: repeat(4, 1fr);
     }
     @include lg-md {
-      grid-template-areas: "a1 a1 a2" "a3 a4 a4" "a5 a5 a6";
+grid-template-areas: "a1 a1 a2" "a3 a4 a4" "a5 a5 a6";
       grid-template-columns: repeat(3, 1fr);
     }
     @include md-sm {
-      grid-template-areas: "a1 a2" "a3 a4" "a5 a6";
+grid-template-areas: "a1 a2" "a3 a4" "a5 a6";
       grid-template-columns: repeat(2, 1fr);
     }
     @include sm {
-      grid-template-areas: "a1" "a2" "a3" "a4" "a5" "a6";
+grid-template-areas: "a1" "a2" "a3" "a4" "a5" "a6";
       grid-template-columns: repeat(1, 1fr);
     }
   }
   &-art {
+transition: background-color 0.5s;
+
     background-color: #f2f2f2;
-    transition: background-color 0.5s;
     &:hover {
-      background-color: #d8d8d8;
+background-color: #d8d8d8;
     }
     &__link {
-      display: grid;
-      height: 100%;
-      grid-template-rows: 300px 1fr;
+display: grid;
       overflow: hidden;
+
+      height: 100%;
+
       transition: 0.5s;
+
+      grid-template-rows: 300px 1fr;
     }
 
     &__img {
-      display: flex;
-      justify-content: center;
+display: flex;
       overflow: hidden;
+      justify-content: center;
     }
     &__img img {
+width: 100%;
+
       transition: transform 0.5s;
-      width: 100%;
+
       object-fit: cover;
     }
     &:hover .posts-art__img img {
-      transform: scale(1.1);
+transform: scale(1.1);
     }
     &__descript {
-      padding: $gap;
-      display: grid;
-      justify-items: center;
+display: grid;
       align-content: center;
+
+      padding: $gap;
+
+      justify-items: center;
     }
     &__descript h3 {
+transition: color 0.5s;
       text-align: center;
       letter-spacing: 0.05em;
+
       color: $color-gray;
-      font-size: 1.125rem;
+
       font-family: "Roboto Slab", serif;
-      transition: color 0.5s;
+      font-size: 1.125rem;
     }
     &.posts-art:hover h3 {
-      color: $color-primary;
+color: $color-primary;
     }
     &__descript p {
+transition: color 0.5s;
       text-align: center;
+
       color: $color-gray;
-      transition: color 0.5s;
     }
     &:hover p {
-      color: $color-primary;
+color: $color-primary;
     }
   }
   &__action {
-    display: flex;
+display: flex;
     justify-content: center;
   }
 }
 
 @for $j from 1 through 6 {
-  .posts-art:nth-of-type(#{$j}) {
-    grid-area: a#{$j};
+.posts-art:nth-of-type(#{$j}) {
+grid-area: a#{$j};
   }
 }
