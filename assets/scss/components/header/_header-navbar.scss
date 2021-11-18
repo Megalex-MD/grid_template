@@ -2,12 +2,12 @@
 @use "../../mixins" as *;
 
 .header-navbar {
-@include md {
-display: flex;
+  @include md {
+    display: flex;
     justify-content: flex-end;
   }
   &__burger {
-position: relative;
+    position: relative;
 
     width: 30px;
     height: 22.5px;
@@ -18,11 +18,11 @@ position: relative;
     transform: rotate(0deg);
 
     @include md-min {
-display: none;
+      display: none;
     }
 
     &-row {
-position: absolute;
+      position: absolute;
 
       display: block;
 
@@ -36,78 +36,78 @@ position: absolute;
       background: $color-light;
 
       &:nth-child(even) {
-left: 50%;
+        left: 50%;
 
         border-radius: 0 3px 3px 0;
       }
       &:nth-child(odd) {
-left: 0;
+        left: 0;
 
         border-radius: 3px 0 0 3px;
       }
       &:nth-child(1),
-&:nth-child(2) {
-top: 0;
+      &:nth-child(2) {
+        top: 0;
       }
       &:nth-child(3),
-&:nth-child(4) {
-top: 9px;
+      &:nth-child(4) {
+        top: 9px;
       }
       &:nth-child(5),
-&:nth-child(6) {
-top: 18px;
+      &:nth-child(6) {
+        top: 18px;
       }
     }
 
     &.active span {
-&:nth-child(1),
-&:nth-child(6) {
-transform: rotate(45deg);
+      &:nth-child(1),
+      &:nth-child(6) {
+        transform: rotate(45deg);
       }
     }
 
     &.active span {
-&:nth-child(2),
-&:nth-child(5) {
-transform: rotate(-45deg);
+      &:nth-child(2),
+      &:nth-child(5) {
+        transform: rotate(-45deg);
       }
     }
     &.active span:nth-child(1) {
-top: 3.5px;
+      top: 3.5px;
       left: 2.5px;
     }
 
     &.active span:nth-child(2) {
-top: 3.5px;
+      top: 3.5px;
       left: calc(50% - 2.5px);
     }
 
     &.active span:nth-child(3) {
-left: -50%;
+      left: -50%;
 
       opacity: 0;
     }
 
     &.active span:nth-child(4) {
-left: 100%;
+      left: 100%;
 
       opacity: 0;
     }
 
     &.active span:nth-child(5) {
-top: 14.5px;
+      top: 14.5px;
       left: 2.5px;
     }
 
     &.active span:nth-child(6) {
-top: 14.5px;
+      top: 14.5px;
       left: calc(50% - 2.5px);
     }
   }
 
   &__list {
-@include md-min {
-display: grid;
+    @include md-min {
+      display: grid;
       justify-content: end;
 
       gap: $gap;
@@ -115,7 +115,7 @@ display: grid;
       @include unlist(0 -10px 0);
     }
     @include md {
-display: none;
+      display: none;
 
       text-align: right;
 
@@ -126,7 +126,7 @@ display: none;
     }
 
     &.active {
-position: absolute;
+      position: absolute;
       top: 100%;
       right: $gap;
 
@@ -135,7 +135,7 @@ position: absolute;
   }
 
   &__link {
-display: inline-block;
+    display: inline-block;
 
     padding: $gap $gap * 0.5;
 
@@ -143,22 +143,24 @@ display: inline-block;
 
     font-size: 1.125rem;
 
+    letter-spacing: 0.1rem;
+
     @include md-min {
-padding: $gap $gap-sm;
+      padding: $gap $gap-sm;
     }
     @include md {
-padding: $gap-sm $gap;
+      padding: $gap-sm $gap;
     }
 
     &:hover,
-&:focus {
-color: $color-accent;
+    &:focus {
+      color: $color-accent;
     }
   }
 
   &__item {
-@include md {
-margin: $gap $gap-sm;
+    @include md {
+      margin: $gap $gap-sm;
     }
   }
 }

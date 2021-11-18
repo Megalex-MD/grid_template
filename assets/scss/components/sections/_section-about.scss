@@ -1,23 +1,20 @@
 @use "../../presets" as *;
 @use "../../mixins" as *;
 
-:root {
-  --padding: 60px;
-}
 .about {
   background-color: $color-gray-light;
   letter-spacing: 0.055em;
   @include lg-min {
-    padding-top: calc(var(--padding) + $gap * 2);
-    padding-bottom: calc(var(--padding) + $gap * 2);
+    padding-top: $gap-x5;
+    padding-bottom: $gap-x5;
   }
   @include lg-md {
-    padding-top: calc(var(--padding) + $gap);
-    padding-bottom: calc(var(--padding) + $gap);
+    padding-top: $gap-x4;
+    padding-bottom: $gap-x4;
   }
   @include md {
-    padding-top: var(--padding);
-    padding-bottom: var(--padding);
+    padding-top: $gap-x3;
+    padding-bottom: $gap-x3;
   }
 
   &__containter {
@@ -26,12 +23,12 @@
 
     @include lg-min {
       grid-template-columns: 1fr 271px;
-      gap: calc(var(--padding) + $gap * 2);
+      gap: $gap-x5;
     }
 
     @include lg-md {
       grid-template-columns: 1fr 271px;
-      gap: $gap * 2;
+      gap: $gap-x2;
     }
     @include md-sm {
       gap: $gap;
