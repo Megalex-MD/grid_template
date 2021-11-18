@@ -10,55 +10,74 @@
     margin-bottom: 3rem;
     font-size: 2.5rem;
   }
+  &__container {
+    @extend %container;
+  }
+  &__grid {
+    display: grid;
+    grid-template-areas: "a1 a1 a2 a3" "a4 a5 a6 a6";
+    grid-template-columns: repeat(4, 1fr);
+    gap: $gap;
+    padding-bottom: $gap;
+  }
+  &-art {
+    background-color: #f2f2f2;
+    transition: background-color 0.5s;
+    &:hover {
+      background-color: #d8d8d8;
+    }
+    &__link {
+      display: grid;
+      height: 100%;
+      grid-template-rows: 300px 1fr;
+      overflow: hidden;
+      transition: 0.5s;
+    }
+
+    &__img {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
+    }
+    &__img img {
+      transition: transform 0.5s;
+    }
+    &:hover .posts-art__img img {
+      transform: scale(1.1);
+    }
+    &__descript {
+      padding: $gap;
+      display: grid;
+      justify-items: center;
+      align-content: center;
+    }
+    &__descript h3 {
+      text-align: center;
+      letter-spacing: 0.05em;
+      color: $color-gray;
+      font-size: 1.125rem;
+      font-family: "Roboto Slab", serif;
+      transition: color 0.5s;
+    }
+    &.posts-art:hover h3 {
+      color: $color-primary;
+    }
+    &__descript p {
+      text-align: center;
+      color: $color-gray;
+      transition: color 0.5s;
+    }
+    &:hover p {
+      color: $color-primary;
+    }
+  }
+  &__action {
+    display: flex;
+    justify-content: center;
+  }
 }
 
-.posts__container {
-  @extend %container;
-}
-.posts__grid {
-  display: grid;
-  grid-template-areas: "a1 a1 a2 a3" "a4 a5 a6 a6";
-  grid-template-columns: repeat(4, 1fr);
-  gap: $gap;
-  padding-bottom: 20px;
-}
-
-p,
-h3 {
-  color: #637588;
-}
-
-.posts-art {
-  background-color: #f2f2f2;
-  transition: background-color 0.5s;
-}
-.posts-art:hover {
-  background-color: #d8d8d8;
-}
-.posts-art__link {
-  display: grid;
-  overflow: hidden;
-  height: 100%;
-  grid-template-rows: 300px 1fr;
-}
-// .posts-art__img {
-// }
-.posts-art__descript {
-  padding: 20px;
-  display: grid;
-  justify-items: center;
-  align-content: center;
-}
-.posts-art__descript h3 {
-  align-content: center;
-  letter-spacing: 0.05em;
-  color: #637588;
-  font-size: 1.125rem;
-  font-family: "Roboto Slab", serif;
-}
-.posts-art__descript p {
-  text-align: center;
-}
 @for $j from 1 through 6 {
   .posts-art:nth-of-type(#{$j}) {
     grid-area: a#{$j};
