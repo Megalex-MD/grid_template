@@ -7,7 +7,6 @@ position: relative;
   display: grid;
   overflow: hidden;
   align-items: center;
-  -ms-flex-align: center;
 
   padding: $gap;
 
@@ -44,7 +43,6 @@ display: flex;
     align-items: center;
     justify-content: center;
 
-    width: 100%;
     height: 100%;
     padding: $gap;
 
@@ -55,7 +53,6 @@ display: flex;
 transition: transform 0.5s;
 
     background-color: $color-primary;
-    background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
 

@@ -25,12 +25,12 @@ gap: $gap-sm;
     @include md-sm {
 gap: $gap-sm;
       grid-template-areas: "ga1 ga2" "ga3 ga2" "ga4 ga4" "ga5 ga6" "ga5 ga7" "ga8 ga9";
-      grid-template-columns: repeat(2, 1fr);
+      grid-template-columns: 1fr 1fr;
     }
     @include sm {
 gap: $gap;
       grid-template-areas: "ga1" "ga2" "ga3" "ga4" "ga5" "ga6" "ga7" "ga8" "ga9";
-      grid-template-columns: repeat(1, 1fr);
+      grid-template-columns: 1fr;
     }
   }
 
